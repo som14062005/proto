@@ -32,7 +32,7 @@ export default function App() {
         }}
         onClick={() => alert("Priya tha poole 🎯")}
       >
-        Click Me
+        Fuck Me
       </button>
     </div>
   );
