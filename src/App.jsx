@@ -1,39 +1,22 @@
 // App.jsx
-export default function App() {
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TouristEmergencySimulation from "./inactive";
+import TouristSafetySystem from "./approval";
+import BlockchainTouristID from "./issueID";
+
+
+function App() {
   return (
-    <div
-      style={{
-        textAlign: "center",
-        marginTop: "50px",
-        background: "linear-gradient(135deg, #ff7eb3, #ff758c, #ff9a9e)",
-        minHeight: "100vh",
-        color: "white",
-        padding: "50px",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <h1 style={{ fontSize: "3rem", textShadow: "2px 2px 8px rgba(0,0,0,0.3)" }}>
-        🎉 React is Working! 🎉
-      </h1>
-      <p style={{ fontSize: "1.5rem" }}>
-        Hello from <span style={{ color: "#ffe082" }}>React</span> 🚀
-      </p>
-      <button
-        style={{
-          background: "#00e676",
-          color: "#000",
-          border: "none",
-          padding: "15px 30px",
-          borderRadius: "30px",
-          fontSize: "1.2rem",
-          cursor: "pointer",
-          marginTop: "20px",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-        }}
-        onClick={() => alert("Priya tha poole 🎯")}
-      >
-        Fuck Me
-      </button>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<TouristSafetySystem />} />
+        <Route path="/safety" element={<TouristSafetySystem />} />
+        <Route path="/emergency" element={<TouristEmergencySimulation />} />
+        <Route path="/issueid" element={<BlockchainTouristID/>} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
